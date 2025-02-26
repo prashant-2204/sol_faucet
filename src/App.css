@@ -1,0 +1,176 @@
+/* Reset default margins and ensure full-screen coverage */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(141, 41, 166, 0.534), rgba(71, 1, 98, 0.867)),url('/Users/pk6710/Desktop/airdrop/src/assets/bg.webp'); /* Random image from Unsplash */
+}
+
+/* Ensure root takes full height */
+#root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+/* Full-screen container */
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fixed header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: "10px";
+  border: "2px solid rgba(141, 41, 166, 0.29) ";
+  box-shadow: "0 0 10px 5px rgba(141, 41, 166, 0.29) inset";
+  
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.wallet-controls {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+/* Main content area below header */
+.main {
+  margin-top: 80px; /* Space for fixed header */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  background: linear-gradient(rgba(141, 41, 166, 0.534), rgba(71, 1, 98, 0.867)),url('/Users/pk6710/Desktop/airdrop/src/assets/bg.webp'); /* Random image from Unsplash */
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Airdrop container styles */
+.airdrop-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Keeps content readable */
+  display: flex;
+  flex-direction: column;
+  gap: 0.11rem;
+}
+
+.airdrop-container h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+.input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input[readonly] {
+  color: #777;
+}
+
+.input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.btn {
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  background-color: #3498db; /* Blue for airdrop action */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.status.requesting {
+  color: #f39c12;
+}
+
+.status.success {
+  color: #27ae60;
+}
+
+.status.error {
+  color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .header h1 {
+    font-size: 1.2rem;
+  }
+  .wallet-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .main {
+    padding: 1rem;
+    margin-top: 120px; /* Adjust for taller header on mobile */
+  }
+  .airdrop-container {
+    padding: 1rem;
+  }
+}
